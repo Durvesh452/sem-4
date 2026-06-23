@@ -3,7 +3,7 @@
 
 ### 🌐 Live Application Link: [hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app](https://hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app)
 ### 📊 Pitch Deck / Presentation: [Google Slides](https://docs.google.com/presentation/d/1tkA807u_aZB6mRd75dLv35MNYbfaxGGqWsI3kXOMO8s/edit?usp=sharing)
-### 🎥 Demo Walkthrough Video: [Link Coming Soon]()
+### 🎥 Demo Walkthrough Video: [Watch on Loom](https://www.loom.com/share/209937b18bea41a5aca78e6499d349d2)
 
 Hidden Plans Hub is a dark-theme, bold, investigative fintech subscription deal marketplace, secret plan revealer, and smart cheapest plan finder. It resolves 3 core challenges:
 1. **Secret & Hidden Plan Reveals**: Uncovers student discounts, regional prices, win-back discounts, and bank tie-ups that organizations bury deep in checkout pages.
