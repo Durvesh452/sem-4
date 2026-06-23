@@ -1,6 +1,9 @@
 # Hidden Plans Hub (HPH)
 > **"The plans they don't advertise. The savings you deserve."**
 
+### 🌐 Live Application Link: [hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app](https://hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app)
+
+
 Hidden Plans Hub is a dark-theme, bold, investigative fintech subscription deal marketplace, secret plan revealer, and smart cheapest plan finder. It resolves 3 core challenges:
 1. **Secret & Hidden Plan Reveals**: Uncovers student discounts, regional prices, win-back discounts, and bank tie-ups that organizations bury deep in checkout pages.
 2. **Cheapest Plan Finder Engine**: Automatically ranks major apps across 16 categories by normalized monthly prices.
