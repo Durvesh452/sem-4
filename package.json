@@ -1,0 +1,37 @@
+{
+  "name": "hidden-plans-hub",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "node": "hardhat node",
+    "deploy:local": "hardhat run scripts/deploy.js --network localhost",
+    "setup:local": "npm run deploy:local && npm run build"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.5.0",
+    "clsx": "^2.1.1",
+    "ethers": "^6.13.1",
+    "lucide-react": "^0.395.0",
+    "mongodb": "^6.5.0",
+    "next": "14.2.4",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "recharts": "^2.12.7",
+    "tailwind-merge": "^2.3.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^20.14.2",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "hardhat": "^2.22.15",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19",
+    "typescript": "^5.4.5"
+  },
+  "type": "module"
+}
