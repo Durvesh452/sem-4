@@ -5,6 +5,17 @@
 ### 📊 Pitch Deck / Presentation: [Google Slides](https://docs.google.com/presentation/d/1tkA807u_aZB6mRd75dLv35MNYbfaxGGqWsI3kXOMO8s/edit?usp=sharing)
 ### 🎥 Demo Walkthrough Video: [Watch on Loom](https://www.loom.com/share/209937b18bea41a5aca78e6499d349d2)
 
+## 📸 Application Screenshots
+
+| **HPH Reward Wallet** | **Secured Checkout & Minting** |
+|:---:|:---:|
+| ![HPH Reward Wallet](./screenshots/wallet_page.png) | ![Secured Checkout](./screenshots/checkout_success.png) |
+
+| **Analytics & Spend Dashboard** |
+|:---:|
+| ![Spend Dashboard](./screenshots/analytics_dashboard.png) |
+
+
 Hidden Plans Hub is a dark-theme, bold, investigative fintech subscription deal marketplace, secret plan revealer, and smart cheapest plan finder. It resolves 3 core challenges:
 1. **Secret & Hidden Plan Reveals**: Uncovers student discounts, regional prices, win-back discounts, and bank tie-ups that organizations bury deep in checkout pages.
 2. **Cheapest Plan Finder Engine**: Automatically ranks major apps across 16 categories by normalized monthly prices.
