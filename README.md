@@ -17,7 +17,7 @@
 
 | **Analytics & Spend Dashboard** |
 |:---:|
-| ![Spend Dashboard](./screenshots/analytics_dashboard.png) |
+| ![Spend Dashboard](https://github.com/Durvesh452/sem-4/blob/fba194901f8894c0559ccaafc7e02e222e577891/Screenshot%202026-06-24%20131611.png) |
 
 
 Hidden Plans Hub is a dark-theme, bold, investigative fintech subscription deal marketplace, secret plan revealer, and smart cheapest plan finder. It resolves 3 core challenges:
