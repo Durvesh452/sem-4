@@ -8,8 +8,11 @@
 ## 📸 Application Screenshots
 
 | **HPH Reward Wallet** | **Secured Checkout & Minting** |
-|:---:|:---:|
-| ![HPH Reward Wallet](./screenshots/wallet_page.png) | ![Secured Checkout](./screenshots/checkout_success.png) |
+|:---:|
+| ![HPH Reward Wallet](./screenshots/wallet_page.png) | 
+
+|:---:|
+![Secured Checkout](./screenshots/checkout_success.png) |
 
 | **Analytics & Spend Dashboard** |
 |:---:|
