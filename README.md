@@ -162,7 +162,7 @@ Freighter is the official Stellar browser extension wallet. To connect:
 
 ## 📝 User Onboarding & Onboarding Forms (Google Form)
 We collect onboarding details and platform ratings to ensure structured user growth:
-*   **Google Form Link**: **[Onboarding & Feedback Form](https://forms.gle/placeholder)**
+*   **Google Form Link**: **[Onboarding & Feedback Form](https://docs.google.com/forms/d/e/1FAIpQLSdLcv2tABAK6Fs7Fk3_yxoYP3p3CpDAItV0P3fNLTbl6sOUAw/viewform?usp=publish-editor)**
 *   **Collected Fields**:
     1.  *Name*: Full name of the user.
     2.  *Email*: Active email address.
