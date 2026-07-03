@@ -145,7 +145,7 @@ function CheckoutFlow() {
             </div>
             {txHash && (
               <div className="pt-2 border-t border-border space-y-1">
-                <span className="text-[10px] text-gray-500 font-bold uppercase block">Solidity Polygon Tx Hash:</span>
+                <span className="text-[10px] text-gray-500 font-bold uppercase block">Stellar Soroban Tx Hash:</span>
                 <span className="text-[10px] text-teal font-mono block break-all bg-slate-950 p-2 rounded border border-teal/10 flex items-center justify-between gap-2">
                   <span>{txHash}</span>
                   <Link2 className="w-3 h-3 text-teal/60 cursor-pointer hover:text-teal" />
@@ -158,7 +158,7 @@ function CheckoutFlow() {
               Go to Spend Dashboard
             </Link>
             <Link href="/wallet" className="w-full sm:w-1/2 py-3 bg-slate-850 hover:bg-slate-800 text-white text-xs font-bold border border-border rounded-xl text-center">
-              View MetaMask Balance
+              View Freighter Balance
             </Link>
           </div>
         </div>
@@ -192,7 +192,7 @@ function CheckoutFlow() {
               <span className="font-extrabold uppercase flex items-center gap-1">
                 <Gift className="w-3 h-3 text-gold" /> Blockchain Bonus
               </span>
-              <p>You earn 10 HPH ERC-20 Tokens on completion, auto-transferred to your wallet.</p>
+              <p>You earn 10 HPH Soroban Tokens on completion, auto-transferred to your wallet.</p>
             </div>
           </div>
 
@@ -200,7 +200,7 @@ function CheckoutFlow() {
           <div className="md:col-span-2 glass-card rounded-2xl p-6 border border-border space-y-6">
             <h3 className="text-lg font-bold text-white">Choose Payment Method</h3>
             <div className="grid grid-cols-3 gap-3">
-              {[{ id: 'stripe', label: '💳 Credit/Debit' }, { id: 'razorpay', label: '⚡ UPI / Net' }, { id: 'crypto', label: '🪙 MetaMask' }].map((opt) => (
+              {[{ id: 'stripe', label: '💳 Credit/Debit' }, { id: 'razorpay', label: '⚡ UPI / Net' }, { id: 'crypto', label: '🪙 Freighter' }].map((opt) => (
                 <button
                   key={opt.id}
                   type="button"
@@ -285,13 +285,13 @@ function CheckoutFlow() {
                 </div>
               )}
 
-              {/* Crypto / MetaMask */}
+              {/* Crypto / Freighter */}
               {paymentMethod === 'crypto' && (
                 <div className="space-y-4 text-center py-4 bg-slate-900 rounded-xl border border-border">
-                  <span className="text-3xl block">🦊</span>
-                  <h4 className="text-sm font-bold text-white mt-1.5">Metamask Crypto Payment</h4>
+                  <span className="text-3xl block">🚀</span>
+                  <h4 className="text-sm font-bold text-white mt-1.5">Freighter Crypto Payment</h4>
                   <p className="text-xs text-gray-400 max-w-xs mx-auto mt-1">
-                    Connect your wallet to purchase this subscription using Polygon gas tokens.
+                    Connect your wallet to purchase this subscription using Stellar gas tokens.
                   </p>
                   {!isConnected ? (
                     <button

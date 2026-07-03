@@ -99,7 +99,7 @@ export default function Dashboard() {
               <span className="text-4xl bg-slate-850 p-2 rounded-xl border border-border flex items-center justify-center">🎁</span>
               <div>
                 <h3 className="text-2xl font-black text-white">{hphBalance} HPH</h3>
-                <span className="text-[10px] text-teal font-bold tracking-widest uppercase">Verified Polygon Contract</span>
+                <span className="text-[10px] text-teal font-bold tracking-widest uppercase">Verified Stellar Contract</span>
               </div>
             </div>
           </div>

@@ -1,3 +1,4 @@
+// src/context/WalletContext.tsx
 "use client";
 
 import React, { createContext, useContext, useState, useEffect } from 'react';
@@ -31,7 +32,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   const [hphBalance, setHphBalance] = useState(120); // Default seed balance
   const [transactions, setTransactions] = useState<Transaction[]>([
     {
-      hash: "0x3af5...4b12",
+      hash: "3af5a6e8b7c9...4b12",
       userId: "user_01",
       planId: "spotify-student",
       planName: "Spotify Student Premium",
@@ -40,7 +41,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
       timestamp: "2026-05-18 14:32"
     },
     {
-      hash: "0xbc88...19e0",
+      hash: "bc88d2f5a6b1...19e0",
       userId: "user_01",
       planId: "ytm-student",
       planName: "YouTube Music Student",
@@ -51,43 +52,60 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   ]);
 
   useEffect(() => {
-    // Check if wallet address was stored previously
-    const savedAddress = localStorage.getItem("hph_wallet_address");
-    const savedBalance = localStorage.getItem("hph_token_balance");
-    const savedTx = localStorage.getItem("hph_transactions");
+    try {
+      // Check if wallet address was stored previously
+      const savedAddress = localStorage.getItem("hph_wallet_address");
+      const savedBalance = localStorage.getItem("hph_token_balance");
+      const savedTx = localStorage.getItem("hph_transactions");
 
-    if (savedAddress) {
-      setIsConnected(true);
-      setWalletAddress(savedAddress);
-    }
-    if (savedBalance) {
-      setHphBalance(Number(savedBalance));
-    }
-    if (savedTx) {
-      setTransactions(JSON.parse(savedTx));
+      if (savedAddress) {
+        setIsConnected(true);
+        setWalletAddress(savedAddress);
+      }
+      if (savedBalance) {
+        const parsedBalance = Number(savedBalance);
+        if (!isNaN(parsedBalance)) {
+          setHphBalance(parsedBalance);
+        }
+      }
+      if (savedTx) {
+        try {
+          setTransactions(JSON.parse(savedTx));
+        } catch (parseError) {
+          console.error("Corrupted transaction logs detected in local storage. Resetting cache.", parseError);
+          localStorage.removeItem("hph_transactions");
+        }
+      }
+    } catch (e) {
+      console.error("Failed to access localStorage safely:", e);
     }
   }, []);
 
   const connectWallet = async () => {
-    if (typeof window !== "undefined" && (window as any).ethereum) {
-      try {
-        const accounts = await (window as any).ethereum.request({ method: 'eth_requestAccounts' });
-        const address = accounts[0];
-        setIsConnected(true);
-        setWalletAddress(address);
-        localStorage.setItem("hph_wallet_address", address);
-      } catch (error) {
-        console.error("MetaMask connection failed, falling back to mock wallet details", error);
+    try {
+      const { isConnected: isFreighterConnected, requestAccess } = await import('@stellar/freighter-api');
+      const connectedRes = await isFreighterConnected();
+      if (connectedRes && connectedRes.isConnected) {
+        const accessRes = await requestAccess();
+        if (accessRes && accessRes.address) {
+          setIsConnected(true);
+          setWalletAddress(accessRes.address);
+          localStorage.setItem("hph_wallet_address", accessRes.address);
+        } else {
+          throw new Error("No address returned from Freighter");
+        }
+      } else {
+        console.warn("Freighter wallet extension is not installed. Falling back to mock Stellar wallet.");
         mockConnect();
       }
-    } else {
-      // Fallback mock wallet for demonstration
+    } catch (error) {
+      console.error("Freighter connection failed, falling back to mock Stellar wallet", error);
       mockConnect();
     }
   };
 
   const mockConnect = () => {
-    const mockAddress = "0x" + Array.from({length: 40}, () => Math.floor(Math.random()*16).toString(16)).join('');
+    const mockAddress = "GB" + Array.from({length: 54}, () => "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567"[Math.floor(Math.random()*32)]).join('');
     setIsConnected(true);
     setWalletAddress(mockAddress);
     localStorage.setItem("hph_wallet_address", mockAddress);
@@ -135,7 +153,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
     }
 
     // 2. Reboot/Renew Payment: If expired or new, generate a standard transaction record
-    const txHash = "0x" + Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join('');
+    const txHash = Array.from({length: 64}, () => Math.floor(Math.random()*16).toString(16)).join('');
     const newTx: Transaction = {
       hash: txHash.substring(0, 8) + "..." + txHash.substring(58),
       userId: walletAddress ? walletAddress.substring(0, 8) : "guest_user",

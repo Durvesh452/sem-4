@@ -21,7 +21,7 @@ export default function ReferralPage() {
     { rank: 1, name: "durvesh_web3", referrals: 142, reward: 3550 },
     { rank: 2, name: "satoshi_hph", referrals: 89, reward: 2225 },
     { rank: 3, name: "0xcryptodev", referrals: 54, reward: 1350 },
-    { rank: 4, name: "amoy_expert", referrals: 31, reward: 775 },
+    { rank: 4, name: "stellar_expert", referrals: 31, reward: 775 },
     { rank: 5, name: "discount_hunter", referrals: 18, reward: 450 }
   ];
 
@@ -32,7 +32,7 @@ export default function ReferralPage() {
         <h1 className="text-3xl md:text-5xl font-black tracking-tight">
           Partner <span className="text-teal">Referrals</span>
         </h1>
-        <p className="text-gray-400 text-xs md:text-sm">Invite colleagues, friends, or family members and claim direct Solidity smart contract HPH bonuses.</p>
+        <p className="text-gray-400 text-xs md:text-sm">Invite colleagues, friends, or family members and claim direct Stellar Soroban smart contract HPH bonuses.</p>
       </div>
 
       {/* 2. Promo / Link Generator Grid */}
@@ -49,12 +49,12 @@ export default function ReferralPage() {
               </div>
             </div>
             <p className="text-[10.5px] text-gray-400 leading-normal pt-1.5">
-              When someone registers using your exclusive partner link and connects their MetaMask wallet, our Polygon smart contract automatically triggers a direct transfer of 25 HPH to your account.
+              When someone registers using your exclusive partner link and connects their Freighter wallet, our Stellar Soroban smart contract automatically triggers a direct transfer of 25 HPH to your account.
             </p>
           </div>
 
           <div className="bg-slate-900 border border-border p-3 rounded-xl text-[10px] text-teal font-extrabold text-center uppercase tracking-wide">
-            🏆 Solid Smart Contract Secured
+            🏆 Stellar Soroban Smart Contract Secured
           </div>
         </div>
 

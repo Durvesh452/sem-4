@@ -39,7 +39,7 @@ echo.
 :: 3. Choose Startup Mode
 echo [Step 3/3] Choose Startup Mode
 echo 1. Start Standard Dev Server (Frontend Only)
-echo 2. Run Full Automated Setup (Local Node + Contract Deploy + Frontend Build + Start)
+echo 2. Run Full Automated Setup (Build Soroban Contracts + Start Frontend)
 set /p choice="Enter your choice (1 or 2): "
 
 if "%choice%"=="2" (
@@ -47,17 +47,14 @@ if "%choice%"=="2" (
     echo ====================================================================
     echo 🚀 Running Full Automated Setup...
     echo ====================================================================
-    echo (1/3) Starting Local Hardhat Node in background...
-    start cmd /k "call npm run node"
+    echo (1/2) Compiling Soroban Smart Contracts...
+    cd soroban
+    cargo build --target wasm32-unknown-unknown --release
+    cd ..
     
-    :: Wait a few seconds for node to boot
-    timeout /t 5 /nobreak >nul
-    
-    echo (2/3) Compiling and Deploying Smart Contracts...
-    call npm run deploy:local
-    
-    echo (3/3) Building Frontend and Launching Server...
-    call npm run build
+    echo (2/2) Launching Server...
+    echo 🔗 Access the application here: http://localhost:3000
+    echo ====================================================================
     call npm run dev
 ) else (
     echo.

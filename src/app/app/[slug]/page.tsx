@@ -229,7 +229,7 @@ export default function AppDetail({ params }: { params: { slug: string } }) {
                     <Gift className="w-3.5 h-3.5 text-gold" />
                     +10 HPH Reward Tokens
                   </span>
-                  <span className="text-gray-500">Polygon Network</span>
+                  <span className="text-gray-500">Stellar Network</span>
                 </div>
 
                 <div className="pt-4">

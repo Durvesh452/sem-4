@@ -15,7 +15,7 @@ Prepare for your project viva with these frequently asked technical questions an
 ### Q2: Explain the difference between Server Components and Client Components in Next.js 14.
 *   **Answer**: 
     - **Server Components (Default)** render on the server. They don't download javascript to the client, which makes them fast and excellent for direct database queries or secure API calls.
-    - **Client Components** are marked with `"use client"` at the top of the file. They run in the browser and support state (`useState`), side-effects (`useEffect`), browser events, and Web3 wallet connections (like MetaMask/Ethers.js). Our pages use `"use client"` because they require client-side filters, active search states, and wallet integrations.
+    - **Client Components** are marked with `"use client"` at the top of the file. They run in the browser and support state (`useState`), side-effects (`useEffect`), browser events, and Web3 wallet connections (like Freighter Wallet/Stellar SDK). Our pages use `"use client"` because they require client-side filters, active search states, and wallet integrations.
 
 ### Q3: What is the dynamic route folder syntax `[slug]` in Next.js?
 *   **Answer**: The square brackets `[slug]` define a dynamic segment in the URL path. When a user navigates to `/app/spotify` or `/app/youtube-music`, Next.js routes the request to `src/app/app/[slug]/page.tsx` and passes `'spotify'` or `'youtube-music'` as the value of `params.slug` to the page component.
@@ -36,18 +36,18 @@ Prepare for your project viva with these frequently asked technical questions an
 
 ---
 
-## 🔵 Section 3: Web3 & Smart Contracts
+## 🔵 Section 3: Web3 & Soroban Smart Contracts
 
-### Q7: What is Solidity, and what is the role of your smart contract `HPHToken.sol`?
-*   **Answer**: Solidity is an object-oriented programming language used for writing smart contracts on blockchain platforms like Ethereum. 
-    Our contract `HPHToken` is a custom token implementation based on the ERC-20 standard. It keeps track of user balances and allowances, and includes a minting/reward function to distribute tokens when a checkout transaction is recorded.
+### Q7: What is Rust, and what is the role of your Soroban smart contracts in `lib.rs`?
+*   **Answer**: Rust is a systems programming language known for memory safety and performance. Soroban is the smart contract platform built on the Stellar network.
+    Our Soroban smart contracts implement the HPHToken logic, purchase registry, and referral records. HPHToken acts as our platform's utility token, and the registry logs checkouts securely on the Stellar ledger, automatically minting HPH rewards.
 
-### Q8: What is MetaMask, and how does your app talk to it?
-*   **Answer**: MetaMask is a browser-extension wallet that acts as a bridge between the browser and a blockchain network. 
-    Our application uses **Ethers.js** to detect `window.ethereum` (injected by MetaMask). When the user clicks "Authorize Wallet", we request their account address. During checkout, we construct a transaction that invokes our smart contract to record their purchase and reward them, which the user signs and pays gas fees for through MetaMask.
+### Q8: What is Freighter, and how does your app talk to it?
+*   **Answer**: Freighter is a browser extension wallet designed for the Stellar network.
+    Our application uses the official Stellar SDK and Freighter API. When the user clicks "Link Freighter Wallet", we request their Stellar public key. During checkout, we build transaction operations that Freighter signs, submitting them to the Stellar Testnet.
 
-### Q9: Why did you use an ERC-20 standard instead of an NFT (ERC-721)?
-*   **Answer**: Loyalty points are fungible—one reward token has the same value as another, and they can be split into smaller fractions (decimals). Therefore, the **ERC-20** (Fungible Token) standard is the appropriate choice. An NFT (ERC-721) would represent unique, non-divisible digital assets, which is not suitable for a cashback/points ledger.
+### Q9: How is storage optimized in Soroban compared to Solidity?
+*   **Answer**: Soroban uses a stateful ledger with explicit lease-based storage settings (temporary, instance, and persistent) to prevent state bloat. This is different from Solidity's mapping storage which stays in state forever unless explicitly cleared, making Soroban contracts highly scalable and cost-efficient.
 
-### Q10: What is gas, and why is it needed?
-*   **Answer**: Gas refers to the fee required to execute transactions or smart contracts on Ethereum-compatible networks. It compensates miners/validators for the computational power needed to process and secure the transaction. To keep gas fees negligible, we deploy our contract on the **Polygon Network** or a local development blockchain (like Hardhat/Ganache) rather than the Ethereum Mainnet.
+### Q10: What are Stellar transaction fees and base reserves?
+*   **Answer**: Stellar requires a small base fee (in stroops, where 1 XLM = 10,000,000 stroops) to process transactions and prevent network spam. Accounts also require a minimum balance (base reserve) in XLM to maintain trustlines and data entries on the ledger. We use the Stellar Testnet Friendbot to fund our accounts for testing without real-world costs.

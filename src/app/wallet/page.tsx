@@ -18,7 +18,7 @@ export default function WalletPage() {
         <h1 className="text-3xl md:text-5xl font-black tracking-tight">
           HPH Reward <span className="text-teal">Wallet</span>
         </h1>
-        <p className="text-gray-400 text-xs md:text-sm">Manage standard Polygon Web3 MetaMask authorizations and view minted transaction registries.</p>
+        <p className="text-gray-400 text-xs md:text-sm">Manage standard Stellar Soroban Freighter Wallet authorizations and view minted transaction registries.</p>
       </div>
 
       {/* 2. Main Wallet Panel */}
@@ -43,13 +43,13 @@ export default function WalletPage() {
           </div>
         </div>
 
-        {/* Card 2: Metamask Integration Details */}
+        {/* Card 2: Freighter Integration Details */}
         <div className="md:col-span-2 glass-card rounded-2xl p-6 border border-border flex flex-col justify-between space-y-4">
           <div className="space-y-3">
             <div className="flex justify-between items-center">
               <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Web3 Authorization Gateway</span>
               <span className="flex items-center gap-1 text-[10px] text-teal font-bold bg-teal/10 px-2 py-0.5 rounded border border-teal/10">
-                <ShieldCheck className="w-3.5 h-3.5" /> Polygon Amoy
+                <ShieldCheck className="w-3.5 h-3.5" /> Stellar Testnet
               </span>
             </div>
 
@@ -66,9 +66,9 @@ export default function WalletPage() {
               </div>
             ) : (
               <div className="bg-slate-900/60 border border-dashed border-border p-4 rounded-xl text-center space-y-1.5 py-6">
-                <span className="text-2xl block">🦊</span>
-                <h4 className="text-xs font-bold text-white">MetaMask Auth Required</h4>
-                <p className="text-[10px] text-gray-400 max-w-xs mx-auto">Link your Web3 MetaMask client to automatically record platform purchases on-chain.</p>
+                <span className="text-2xl block">🚀</span>
+                <h4 className="text-xs font-bold text-white">Freighter Wallet Auth Required</h4>
+                <p className="text-[10px] text-gray-400 max-w-xs mx-auto">Link your Freighter Wallet client to automatically record platform purchases on-chain.</p>
               </div>
             )}
           </div>
@@ -87,7 +87,7 @@ export default function WalletPage() {
                 className="px-6 py-2.5 bg-gradient-to-r from-gold to-teal text-slate-950 text-xs font-black rounded-xl hover:brightness-110 active:scale-95 transition-all shadow-gold-glow flex items-center gap-1.5"
               >
                 <Wallet className="w-4 h-4" />
-                <span>Link MetaMask Wallet</span>
+                <span>Link Freighter Wallet</span>
               </button>
             )}
           </div>
@@ -101,7 +101,7 @@ export default function WalletPage() {
             <History className="w-5 h-5 text-gray-500" />
             <h3 className="text-base font-bold text-white">On-Chain Transaction Log</h3>
           </div>
-          <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Polygon Mainnet Ledger</span>
+          <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Stellar Testnet Ledger</span>
         </div>
 
         {transactions.length > 0 ? (

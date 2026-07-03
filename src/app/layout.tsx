@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Hidden Plans Hub - The Plans They Don't Advertise",
-  description: "Reveal hidden subscription plans, find the cheapest options across music, movies, cloud storage, and unlock exclusive rewards with Polygon blockchain.",
+  description: "Reveal hidden subscription plans, find the cheapest options across music, movies, cloud storage, and unlock exclusive rewards with Stellar blockchain.",
 };
 
 export default function RootLayout({

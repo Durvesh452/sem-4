@@ -56,7 +56,7 @@ export default function Header() {
           </div>
         </Link>
 
-        {/* Web3 status & MetaMask info */}
+        {/* Web3 status & Freighter info */}
         <div className="flex items-center space-x-3">
           {isConnected ? (
             <div className="flex items-center space-x-3 bg-slate-850 px-3 py-1.5 rounded-full border border-border">

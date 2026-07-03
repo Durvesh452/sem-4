@@ -30,13 +30,13 @@ Use this script as a slide-by-slide guide for your Semester Project presentation
 *   **Visual**: Tech Stack Diagram:
     *   **Frontend & Routing**: Next.js 14 (App Router), React, TailwindCSS.
     *   **Database**: MongoDB (Dynamic Storage & Self-Seeding API).
-    *   **Web3 Integration**: Ethereum/Polygon Smart Contracts (Solidity), Ethers.js, MetaMask.
+    *   **Web3 Integration**: Stellar Smart Contracts (Soroban/Rust), Stellar SDK, Freighter Wallet.
     *   **Icons & Assets**: Lucide React.
 *   **Speaker Script**:
     > "To build a modern, high-performance web application, we chose a full-stack architecture. 
     > On the frontend, we use **Next.js 14** for fast server-side rendering and routing, styled with **TailwindCSS** for a premium dark-themed aesthetic. 
     > For our data tier, we integrated **MongoDB** which dynamically serves our plans via Next.js API endpoints.
-    > For the blockchain layer, we wrote a custom **Solidity Smart Contract** representing the HPH Token. Using **Ethers.js**, the app connects to the user's **MetaMask** wallet to record checkout actions and distribute rewards on-chain."
+    > For the blockchain layer, we wrote custom **Soroban Smart Contracts** in Rust. Using the **Stellar SDK**, the app connects to the user's **Freighter** wallet to record checkout actions and distribute rewards on-chain."
 
 ---
 
@@ -67,15 +67,15 @@ Use this script as a slide-by-slide guide for your Semester Project presentation
 
 ---
 
-## 🎙️ Slide 6: Web3 & Smart Contracts
-*   **Visual**: Code snippets of `HPHToken.sol` or Web3 transaction status:
-    *   ERC-20 token standard.
+## 🎙️ Slide 6: Web3 & Soroban Smart Contracts
+*   **Visual**: Code snippets of Soroban contracts in Rust or Web3 transaction status:
+    *   Stellar token standard implementation.
     *   Smart contract records purchase details on-chain.
-    *   Award transactions verifiable via Polygonscan/Etherscan.
+    *   Award transactions verifiable via Stellar Explorer.
 *   **Speaker Script**:
-    > "A unique selling point of our system is the Web3 loyalty integration. We developed a Solidity Smart Contract called **HPHToken (HPH)**. 
-    > When a user purchases a subscription, our application interacts with MetaMask. The smart contract registers the subscription ID, price, and timestamp on-chain, and automatically mints or transfers 10 HPH reward tokens to the user's wallet as cashback. 
-    > This demonstrates how decentralized ledgers can power modern, tamper-proof loyalty programs."
+    > "A unique selling point of our system is the Web3 loyalty integration. We developed custom Soroban smart contracts in Rust, including **HPHToken** and a **PurchaseRegistry**. 
+    > When a user purchases a subscription, our application interacts with their Freighter wallet. The smart contract registers the subscription ID, price, and timestamp on-chain, and automatically mints or transfers 10 HPH reward tokens to the user's wallet as cashback. 
+    > This demonstrates how decentralized ledgers like Stellar can power modern, tamper-proof loyalty programs with minimal latency."
 
 ---
 
@@ -84,12 +84,12 @@ Use this script as a slide-by-slide guide for your Semester Project presentation
     1.  Homepage & Eligibility Quiz.
     2.  Finder Dashboard ranking the cheapest services.
     3.  Clicking a Hidden Deal (e.g. Spotify Student or Prime Youth) to see the step-by-step unlock instructions.
-    4.  Checkout page simulating payment and triggering MetaMask wallet interaction.
+    4.  Checkout page simulating payment and triggering Freighter wallet interaction.
 *   **Speaker Script**:
     > "Now, I will walk you through a quick demonstration of the application. 
     > Here is the home page. If I take the quiz and select 'Student' with a budget of ₹200, the system instantly filters the database and matches me with student deals like Spotify Student or YouTube Music Student.
     > Clicking 'Unlock' displays the exact verification steps required. 
-    > When I proceed to checkout and click submit, the app triggers a simulated payment and interacts with the connected Web3 wallet, displaying the resulting transaction hash directly on screen."
+    > When I proceed to checkout and click submit, the app triggers a simulated payment and interacts with the connected Freighter wallet, displaying the resulting transaction hash directly on screen."
 
 ---
 
