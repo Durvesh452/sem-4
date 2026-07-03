@@ -201,8 +201,6 @@ Based on early reviews, the following codebase upgrades were implemented:
     *   🔗 **Git Commit Link**: [WalletContext.tsx modification (08b22d8)](https://github.com/Durvesh452/sem-4/commit/08b22d8)
 3.  **30-Day Double-Spending Prevention**: Added contract-level lease rules blocking repeat purchases within active billing cycles.
     *   🔗 **Git Commit Link**: [Double spending checks (d34a09b)](https://github.com/Durvesh452/sem-4/commit/d34a09b)
-4.  **MongoDB Dynamic Failover**: Added self-seeding collections with local JSON static fallback for offline stability.
-    *   🔗 **Git Commit Link**: [MongoDB self-seeding (a7a1f7e)](https://github.com/Durvesh452/sem-4/commit/a7a1f7e)
 
 ---
 
