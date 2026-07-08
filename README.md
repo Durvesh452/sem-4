@@ -216,13 +216,3 @@ Based on early reviews, the following codebase upgrades were implemented:
 
 ---
 
-## 🎥 Demo Walkthrough Video Checklist
-Verify your presentation covers these elements during evaluation:
-- [x] **User Onboarding & Registration**: Show login and database integration.
-- [x] **Freighter Wallet Link**: Connect extension and read Stellar public address.
-- [x] **Plan Finder Workflow**: Use category filters and cost rankings.
-- [x] **Stellar Transaction Execution**: Trigger checkout and display the transaction hash.
-- [x] **Spend Dashboard**: View Recharts breakdown of subscription expenses.
-- [x] **On-chain History Ledger**: Inspect previous HPH token rewards.
-- [x] **User Feedback & Forms**: Explain Google Forms onboarding flow.
-- [x] **Analytics Overview**: Present dynamic MongoDB data metrics.
