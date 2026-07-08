@@ -7,6 +7,7 @@ import {
   Sparkles, CheckCircle2, ChevronRight, Gift, Percent, Globe 
 } from 'lucide-react';
 import { APP_SERVICES, Plan } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 
 export default function HiddenPlansHub() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -129,7 +130,7 @@ export default function HiddenPlansHub() {
                 {/* Brand row */}
                 <div className="flex justify-between items-start">
                   <div className="flex items-center space-x-3">
-                    <span className="text-3xl bg-slate-850 p-2 rounded-xl border border-border">{plan.appLogo}</span>
+                    <BrandLogo id={plan.appLogo} />
                     <div>
                       <span className="text-[10px] text-gray-500 font-extrabold uppercase tracking-wider block">{plan.appName}</span>
                       <h3 className="text-base font-extrabold text-white">{plan.name}</h3>

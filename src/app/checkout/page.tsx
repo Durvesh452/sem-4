@@ -6,6 +6,7 @@ import { useSearchParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { useWallet } from '@/context/WalletContext';
 import { APP_SERVICES, Plan } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 import {
   CreditCard,
   ShieldCheck,
@@ -73,7 +74,7 @@ function CheckoutFlow() {
     priceMonthly: 59,
     originalPriceMonthly: 119,
     appName: 'Spotify',
-    appLogo: '🟢',
+    appLogo: 'spotify',
     isHidden: true,
   };
 
@@ -125,7 +126,7 @@ function CheckoutFlow() {
 
       {success ? (
         // Success screen (after on‑chain recording)
-        <div className="glass-card rounded-2xl p-6 md:p-8 border border-teal/30 text-center space-y-6 animate-pulse-glow">
+        <div className="glass-card rounded-3xl p-6 md:p-10 border border-teal/40 text-center space-y-6 shadow-premium-glass animate-pulse-glow">
           <div className="w-16 h-16 bg-teal/10 rounded-full flex items-center justify-center border border-teal/40 mx-auto text-3xl">🎉</div>
           <div className="space-y-2">
             <h2 className="text-2xl font-black text-white">Payment Successful!</h2>
@@ -166,9 +167,9 @@ function CheckoutFlow() {
         // Main checkout form
         <div className="grid md:grid-cols-3 gap-6">
           {/* Plan info card */}
-          <div className="md:col-span-1 glass-card rounded-2xl p-5 border border-border space-y-4 self-start">
+          <div className="md:col-span-1 glass-card rounded-3xl p-6 border border-border space-y-4 self-start shadow-premium-glass">
             <div className="flex items-center space-x-3 pb-3 border-b border-border">
-              <span className="text-3xl bg-slate-850 p-2 rounded-xl border border-border">{activePlan.appLogo}</span>
+              <BrandLogo id={activePlan.appLogo} />
               <div>
                 <span className="text-[9px] text-gray-500 font-bold uppercase tracking-wider block">{activePlan.appName}</span>
                 <span className="text-sm font-extrabold text-white block leading-tight">{activePlan.name}</span>
@@ -197,8 +198,8 @@ function CheckoutFlow() {
           </div>
 
           {/* Payment details panel */}
-          <div className="md:col-span-2 glass-card rounded-2xl p-6 border border-border space-y-6">
-            <h3 className="text-lg font-bold text-white">Choose Payment Method</h3>
+          <div className="md:col-span-2 glass-card rounded-3xl p-6 md:p-8 border border-border space-y-6 shadow-premium-glass">
+            <h3 className="text-xl font-black text-white">Choose Payment Method</h3>
             <div className="grid grid-cols-3 gap-3">
               {[{ id: 'stripe', label: '💳 Credit/Debit' }, { id: 'razorpay', label: '⚡ UPI / Net' }, { id: 'crypto', label: '🪙 Freighter' }].map((opt) => (
                 <button

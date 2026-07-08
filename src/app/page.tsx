@@ -9,6 +9,7 @@ import {
   Sparkles, Lock, Unlock, Crown, Search, HelpCircle 
 } from 'lucide-react';
 import { CATEGORIES, APP_SERVICES, Plan } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 
 // Map icon name string to Lucide Icon component
 const iconMap: Record<string, React.ComponentType<any>> = {
@@ -100,35 +101,35 @@ export default function Home() {
   return (
     <div className="space-y-12">
       {/* 1. Hero Section */}
-      <section className="text-center py-12 md:py-20 max-w-4xl mx-auto space-y-6 relative">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-72 h-72 rounded-full bg-purple-650/10 blur-[120px]"></div>
-        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 -z-10 w-48 h-48 rounded-full bg-sky-500/5 blur-[100px]"></div>
+      <section className="text-center py-12 md:py-24 max-w-4xl mx-auto space-y-8 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 -z-10 w-96 h-96 rounded-full bg-fuchsia-500/10 blur-[120px] animate-pulse-glow"></div>
+        <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 -z-10 w-64 h-64 rounded-full bg-teal-500/10 blur-[100px] animate-float"></div>
 
-        <div className="inline-flex items-center space-x-2 bg-slate-850 px-4 py-1.5 rounded-full border border-border/80 text-xs md:text-sm font-semibold text-sky-400 shadow-sky-glow">
-          <Sparkles className="w-4 h-4 text-sky-400 animate-pulse" />
+        <div className="inline-flex items-center space-x-2 bg-slate-900/80 backdrop-blur-md px-5 py-2 rounded-full border border-teal/30 text-xs md:text-sm font-bold text-teal shadow-teal-glow">
+          <Sparkles className="w-4 h-4 text-teal animate-pulse" />
           <span>Revealing the unadvertised, standard loopholes.</span>
         </div>
 
-        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight leading-none">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tight leading-tight">
           The plans they <br className="hidden md:block"/>
-          <span className="bg-gradient-to-r from-purple-400 via-fuchsia-300 to-indigo-400 bg-clip-text text-transparent animate-pulse-glow">
+          <span className="bg-gradient-to-r from-fuchsia-400 via-indigo-400 to-teal-400 bg-clip-text text-transparent animate-pulse-glow">
             don't advertise.
           </span>
         </h1>
-        <p className="text-gray-400 text-lg md:text-xl font-medium max-w-2xl mx-auto">
+        <p className="text-slate-300 text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
           Hidden Plans Hub reveals unlisted subscription deals, ranks the cheapest options, and pays you back in HPH blockchain tokens.
         </p>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-5 pt-6">
           <Link
             href="/finder"
-            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-sky-400 to-blue-500 text-slate-950 font-extrabold text-base rounded-xl transition-all shadow-sky-glow hover:shadow-teal-glow hover:brightness-110 active:scale-95 text-center border border-sky-400/20"
+            className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-teal to-sky-500 text-slate-950 font-extrabold text-base rounded-2xl transition-all shadow-premium-glass hover:shadow-teal-glow hover:scale-105 active:scale-95 text-center border border-teal/20"
           >
             Start Cheapest Finder
           </Link>
           <button
             onClick={startQuiz}
-            className="w-full sm:w-auto px-8 py-4 bg-slate-900 border border-border hover:border-teal/50 text-white font-bold text-base rounded-xl transition-all active:scale-95"
+            className="w-full sm:w-auto px-8 py-4 bg-slate-900/80 backdrop-blur-md border border-border hover:border-fuchsia-500 hover:text-fuchsia-400 text-white font-bold text-base rounded-2xl transition-all active:scale-95 shadow-premium-glass hover:shadow-purple-glow"
           >
             Take Eligibility Quiz
           </button>
@@ -237,7 +238,7 @@ export default function Home() {
                         className="flex items-center justify-between p-3.5 bg-slate-850 rounded-xl border border-border hover:border-teal/50 transition-all"
                       >
                         <div className="flex items-center space-x-3">
-                          <span className="text-2xl">{plan.appLogo}</span>
+                          <BrandLogo id={plan.appLogo} className="w-8 h-8 p-1.5" />
                           <div>
                             <div className="flex items-center space-x-1">
                               <span className="text-sm font-bold text-white">{plan.appName}</span>
@@ -335,7 +336,7 @@ export default function Home() {
               <div className="space-y-4">
                 {/* Logo & Category */}
                 <div className="flex items-center space-x-3">
-                  <span className="text-3xl bg-slate-850 p-2 rounded-xl border border-border">{plan.appLogo}</span>
+                  <BrandLogo id={plan.appLogo} />
                   <div>
                     <span className="text-xs font-bold tracking-widest text-gray-400 uppercase">
                       {plan.appName}

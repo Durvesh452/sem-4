@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Crown, ArrowLeft, Check, Lock, Star, ChevronRight } from 'lucide-react';
 import { APP_SERVICES, CATEGORIES, AppService } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 
 export default function CategoryResults({ params }: { params: { slug: string } }) {
   const categoryInfo = CATEGORIES.find(c => c.id === params.slug);
@@ -63,9 +64,7 @@ export default function CategoryResults({ params }: { params: { slug: string } }
           <div className="bg-slate-900 border border-teal/40 rounded-xl p-3.5 flex items-center space-x-4">
             <div className="flex -space-x-2.5">
               {compareList.map(item => (
-                <span key={item.id} className="text-2xl bg-slate-800 w-9 h-9 rounded-full border border-border flex items-center justify-center">
-                  {item.logo}
-                </span>
+                <BrandLogo key={item.id} id={item.logo} className="!w-9 !h-9 !p-1.5 !rounded-full !bg-slate-800 !border-border" />
               ))}
             </div>
             <div>
@@ -133,7 +132,7 @@ export default function CategoryResults({ params }: { params: { slug: string } }
                   {/* Row 1: Header info */}
                   <div className="flex justify-between items-start">
                     <div className="flex items-center space-x-3.5">
-                      <span className="text-3xl bg-slate-850 p-2.5 rounded-xl border border-border">{app.logo}</span>
+                      <BrandLogo id={app.logo} />
                       <div>
                         <div className="flex items-center gap-1.5">
                           <h4 className="font-extrabold text-white text-base">{app.name}</h4>

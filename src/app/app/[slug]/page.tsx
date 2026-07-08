@@ -8,6 +8,7 @@ import {
   HelpCircle, CheckCircle2, ChevronRight, Gift, Percent, Globe 
 } from 'lucide-react';
 import { APP_SERVICES, Plan, AppService } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 
 export default function AppDetail({ params }: { params: { slug: string } }) {
   const [services, setServices] = useState<AppService[]>(APP_SERVICES);
@@ -71,9 +72,7 @@ export default function AppDetail({ params }: { params: { slug: string } }) {
         </Link>
         
         <div className="flex items-center space-x-4">
-          <span className="text-5xl bg-slate-900 border border-border p-3.5 rounded-2xl flex items-center justify-center">
-            {app.logo}
-          </span>
+          <BrandLogo id={app.logo} className="!w-12 !h-12 !p-2.5 !rounded-2xl" />
           <div>
             <span className="text-xs font-bold text-teal tracking-widest uppercase">App Subscription Portal</span>
             <h1 className="text-3xl md:text-5xl font-black text-white">{app.name}</h1>
@@ -269,7 +268,7 @@ export default function AppDetail({ params }: { params: { slug: string } }) {
             <div className="space-y-6">
               {/* Modal Head */}
               <div className="flex items-center space-x-3.5 border-b border-border pb-4">
-                <span className="text-4xl bg-slate-900 p-2 rounded-xl border border-gold/20">{app.logo}</span>
+                <BrandLogo id={app.logo} className="!w-10 !h-10 !p-2 !rounded-xl !border-gold/20" />
                 <div>
                   <div className="flex items-center gap-1.5">
                     <h3 className="text-xl font-bold text-white">{selectedPlanForModal.name}</h3>

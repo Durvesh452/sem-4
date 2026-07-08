@@ -9,6 +9,7 @@ import {
   Newspaper, Terminal, Heart, ShoppingBag, Plane, TrendingUp 
 } from 'lucide-react';
 import { APP_SERVICES, CATEGORIES, AppService, Plan } from '@/data/plans';
+import BrandLogo from '@/components/BrandLogo';
 
 const iconMap: Record<string, React.ComponentType<any>> = {
   Music, Film, Utensils, Cpu, Activity, HardDrive, Gamepad2, 
@@ -240,7 +241,7 @@ export default function Finder() {
                         {/* 1. App name & details */}
                         <td className="p-5">
                           <div className="flex items-center space-x-3.5">
-                            <span className="text-3xl bg-slate-850 p-2.5 rounded-xl border border-border">{item.appLogo}</span>
+                            <BrandLogo id={item.appLogo} />
                             <div>
                               <div className="flex items-center space-x-1.5">
                                 <span className="font-bold text-white text-base">{item.appName}</span>
@@ -327,7 +328,7 @@ export default function Finder() {
                   <div key={item.appId} className={`p-4 space-y-4 ${isWinner ? "bg-gold/5" : ""}`}>
                     <div className="flex justify-between items-start">
                       <div className="flex items-center space-x-3">
-                        <span className="text-3xl bg-slate-850 p-2 rounded-xl border border-border">{item.appLogo}</span>
+                        <BrandLogo id={item.appLogo} />
                         <div>
                           <div className="flex items-center gap-1.5">
                             <span className="font-bold text-white text-sm">{item.appName}</span>

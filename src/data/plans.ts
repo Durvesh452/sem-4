@@ -48,7 +48,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "jiosaavn",
     name: "JioSaavn",
-    logo: "🎵",
+    logo: "jiosaavn",
     category: "music",
     description: "Stream high-quality Indian and International music for free or with ad-free JioSaavn Pro.",
     plans: [
@@ -77,7 +77,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "gaana",
     name: "Gaana",
-    logo: "📻",
+    logo: "gaana",
     category: "music",
     description: "Popular Indian music streaming service featuring latest Bollywood, regional, and international songs.",
     plans: [
@@ -97,7 +97,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "youtube-music",
     name: "YouTube Music",
-    logo: "📺",
+    logo: "youtube-music",
     category: "music",
     description: "Stream official albums, singles, remixes, live performances, and music videos.",
     plans: [
@@ -134,7 +134,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "spotify",
     name: "Spotify",
-    logo: "🟢",
+    logo: "spotify",
     category: "music",
     description: "World's most popular audio streaming subscription service with millions of songs and podcasts.",
     plans: [
@@ -171,7 +171,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "apple-music",
     name: "Apple Music",
-    logo: "🍎",
+    logo: "apple-music",
     category: "music",
     description: "Ad-free audio streaming service with spatial audio, Dolby Atmos, and curated playlists.",
     plans: [
@@ -210,7 +210,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "zee5",
     name: "Zee5",
-    logo: "📺",
+    logo: "zee5",
     category: "movies",
     description: "Leading Indian OTT platform for Hindi, regional movies, TV shows, and originals.",
     plans: [
@@ -230,7 +230,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "sonyliv",
     name: "SonyLIV",
-    logo: "🎭",
+    logo: "sonyliv",
     category: "movies",
     description: "Watch live sports, exclusive originals, TV shows, movies and live TV.",
     plans: [
@@ -250,7 +250,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "disney-hotstar",
     name: "Disney+ Hotstar",
-    logo: "⭐",
+    logo: "disney-hotstar",
     category: "movies",
     description: "Watch Disney, Pixar, Marvel, Star Wars, National Geographic, and live cricket.",
     plans: [
@@ -269,7 +269,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "prime-video",
     name: "Amazon Prime Video",
-    logo: "📦",
+    logo: "prime-video",
     category: "movies",
     description: "Get Prime Video, Prime Music, free fast shipping, and exclusive shopping deals.",
     plans: [
@@ -307,7 +307,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "netflix",
     name: "Netflix",
-    logo: "🔴",
+    logo: "netflix",
     category: "movies",
     description: "Watch unlimited award-winning Netflix originals, movies, TV shows, and documentaries.",
     plans: [
@@ -325,7 +325,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "apple-tv",
     name: "Apple TV+",
-    logo: "",
+    logo: "apple-tv",
     category: "movies",
     description: "Award-winning Apple Original series and movies, from spectacular dramas to star-studded comedies.",
     plans: [
@@ -345,7 +345,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "swiggy-one",
     name: "Swiggy One",
-    logo: "🧡",
+    logo: "swiggy-one",
     category: "food",
     description: "Unlimited free deliveries and extra discounts on Swiggy Food, Instamart, and Dineout.",
     plans: [
@@ -363,7 +363,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "zomato-gold",
     name: "Zomato Gold",
-    logo: "❤️",
+    logo: "zomato-gold",
     category: "food",
     description: "Unlock free deliveries, VIP access, and up to 40% off dining out across thousands of restaurants.",
     plans: [
@@ -392,7 +392,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "blinkit-pass",
     name: "Blinkit Pass",
-    logo: "💛",
+    logo: "blinkit-pass",
     category: "food",
     description: "Get massive savings and guaranteed free delivery on grocery delivery items from Blinkit.",
     plans: [
@@ -413,7 +413,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "adobe-cc",
     name: "Adobe Creative Cloud",
-    logo: "🎨",
+    logo: "adobe-cc",
     category: "design",
     description: "Get 20+ creative apps including Photoshop, Illustrator, Premiere Pro, and Acrobat.",
     plans: [
@@ -441,7 +441,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "figma",
     name: "Figma",
-    logo: "🎛️",
+    logo: "figma",
     category: "design",
     description: "The collaborative interface design tool for teams to wireframe, prototype and collaborate.",
     plans: [
@@ -472,7 +472,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "github",
     name: "GitHub",
-    logo: "💻",
+    logo: "github",
     category: "dev",
     description: "Hosting service for software development and version control using Git.",
     plans: [
@@ -503,7 +503,7 @@ export const APP_SERVICES: AppService[] = [
   {
     id: "linkedin-learning",
     name: "LinkedIn Learning",
-    logo: "💼",
+    logo: "linkedin-learning",
     category: "education",
     description: "Acquire professional skills from industry experts with 16,000+ high-quality video courses.",
     plans: [

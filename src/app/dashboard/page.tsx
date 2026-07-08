@@ -10,6 +10,7 @@ import {
 import { 
   ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Cell 
 } from 'recharts';
+import BrandLogo from '@/components/BrandLogo';
 
 export default function Dashboard() {
   const { isConnected, hphBalance, transactions, getSubscriptionStatus } = useWallet();
@@ -55,8 +56,8 @@ export default function Dashboard() {
 
       {/* 2. CHEAPER ALTERNATIVE ALERTS */}
       {showAlternativeAlert && (
-        <div className="bg-amber-950/20 border border-gold/30 rounded-2xl p-5 relative overflow-hidden flex flex-col md:flex-row items-start justify-between gap-4 animate-pulse-glow">
-          <div className="absolute right-0 top-0 w-48 h-48 bg-gold/5 blur-[60px] -z-10"></div>
+        <div className="bg-amber-950/20 border border-amber-500/30 rounded-3xl p-6 relative overflow-hidden flex flex-col md:flex-row items-start justify-between gap-5 shadow-premium-glass animate-pulse-glow">
+          <div className="absolute right-0 top-0 w-48 h-48 bg-amber-500/5 blur-[60px] -z-10"></div>
           
           <div className="flex items-start space-x-3.5">
             <div className="bg-gold/10 p-2.5 rounded-xl border border-gold/20 mt-0.5">
@@ -92,7 +93,7 @@ export default function Dashboard() {
       {/* 3. Spend Chart and Token Balance Row */}
       <div className="grid md:grid-cols-3 gap-6">
         {/* Token Balance Indicator */}
-        <div className="glass-card rounded-2xl p-6 border border-border flex flex-col justify-between space-y-4">
+        <div className="glass-card rounded-3xl p-8 border border-border flex flex-col justify-between space-y-4 shadow-premium-glass">
           <div className="space-y-2">
             <span className="text-[10px] text-gray-500 font-black uppercase tracking-widest block">Wallet Asset Tracker</span>
             <div className="flex items-center space-x-2">
@@ -125,7 +126,7 @@ export default function Dashboard() {
         </div>
 
         {/* Spend Chart */}
-        <div className="md:col-span-2 glass-card rounded-2xl p-6 border border-border space-y-4">
+        <div className="md:col-span-2 glass-card rounded-3xl p-8 border border-border space-y-4 shadow-premium-glass">
           <div className="flex justify-between items-center">
             <div>
               <span className="text-[10px] text-gray-500 font-black uppercase tracking-widest block">Category spend analytics</span>
@@ -160,10 +161,23 @@ export default function Dashboard() {
           {uniqueSubscriptions.map((sub) => {
             const status = getSubscriptionStatus(sub.planId);
             // Determine a matching logo based on planId or name
-            let logo = "❤️";
-            if (sub.planId.includes("spotify")) logo = "🟢";
-            else if (sub.planId.includes("yt") || sub.planId.includes("youtube") || sub.planId.includes("ytm")) logo = "📺";
-            else if (sub.planId.includes("prime") || sub.planId.includes("amazon")) logo = "📦";
+            let logoId = "music";
+            if (sub.planId.includes("spotify")) logoId = "spotify";
+            else if (sub.planId.includes("yt") || sub.planId.includes("youtube") || sub.planId.includes("ytm")) logoId = "youtube-music";
+            else if (sub.planId.includes("prime") || sub.planId.includes("amazon")) logoId = "prime-video";
+            else if (sub.planId.includes("netflix")) logoId = "netflix";
+            else if (sub.planId.includes("apple-music") || sub.planId.includes("am-")) logoId = "apple-music";
+            else if (sub.planId.includes("apple-tv") || sub.planId.includes("appletv")) logoId = "apple-tv";
+            else if (sub.planId.includes("zee5")) logoId = "zee5";
+            else if (sub.planId.includes("sonyliv")) logoId = "sonyliv";
+            else if (sub.planId.includes("hotstar")) logoId = "disney-hotstar";
+            else if (sub.planId.includes("swiggy")) logoId = "swiggy-one";
+            else if (sub.planId.includes("zomato")) logoId = "zomato-gold";
+            else if (sub.planId.includes("blinkit")) logoId = "blinkit-pass";
+            else if (sub.planId.includes("adobe")) logoId = "adobe-cc";
+            else if (sub.planId.includes("figma")) logoId = "figma";
+            else if (sub.planId.includes("github")) logoId = "github";
+            else if (sub.planId.includes("linkedin")) logoId = "linkedin-learning";
             
             return (
               <div 
@@ -177,7 +191,7 @@ export default function Dashboard() {
                 <div className="space-y-3.5">
                   <div className="flex justify-between items-start">
                     <div className="flex items-center space-x-3">
-                      <span className="text-2xl bg-slate-850 p-2 rounded-xl border border-border">{logo}</span>
+                      <BrandLogo id={logoId} className="w-8 h-8 p-1.5" />
                       <div>
                         <h4 className="font-extrabold text-white text-sm leading-tight">{sub.planName}</h4>
                         <span className="text-[10px] text-gray-500 font-bold uppercase">Optimized Tier</span>
