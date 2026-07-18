@@ -1,10 +1,25 @@
 "use client";
 
 import React, { useState } from 'react';
-import { 
-  Share2, Copy, Check, Users, Gift, Crown, 
-  ArrowUpRight, Globe, ShieldAlert 
+import {
+  Share2, Copy, Check, Users, Gift, Crown,
+  ArrowUpRight, Trophy, Zap
 } from 'lucide-react';
+
+const leaderboard = [
+  { rank: 1, name: "durvesh_web3",    referrals: 142, reward: 3550 },
+  { rank: 2, name: "satoshi_hph",     referrals: 89,  reward: 2225 },
+  { rank: 3, name: "0xcryptodev",     referrals: 54,  reward: 1350 },
+  { rank: 4, name: "stellar_expert",  referrals: 31,  reward: 775 },
+  { rank: 5, name: "discount_hunter", referrals: 18,  reward: 450 },
+];
+
+const rankStyle = (rank: number) => {
+  if (rank === 1) return { background: 'linear-gradient(135deg, #F59E0B, #D97706)', color: '#1A0A00' };
+  if (rank === 2) return { background: 'linear-gradient(135deg, #CBD5E1, #94A3B8)', color: '#0F172A' };
+  if (rank === 3) return { background: 'linear-gradient(135deg, #D97706, #B45309)', color: '#ffffff' };
+  return { background: 'rgba(30,42,69,0.6)', color: '#64748B', border: '1px solid rgba(30,42,69,0.8)' };
+};
 
 export default function ReferralPage() {
   const [copied, setCopied] = useState(false);
@@ -13,121 +28,169 @@ export default function ReferralPage() {
   const handleCopyLink = () => {
     navigator.clipboard.writeText(referralLink);
     setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
+    setTimeout(() => setCopied(false), 2500);
   };
 
-  // Seed leaderboard data
-  const leaderboard = [
-    { rank: 1, name: "durvesh_web3", referrals: 142, reward: 3550 },
-    { rank: 2, name: "satoshi_hph", referrals: 89, reward: 2225 },
-    { rank: 3, name: "0xcryptodev", referrals: 54, reward: 1350 },
-    { rank: 4, name: "stellar_expert", referrals: 31, reward: 775 },
-    { rank: 5, name: "discount_hunter", referrals: 18, reward: 450 }
-  ];
-
   return (
-    <div className="max-w-4xl mx-auto space-y-8">
-      {/* 1. Header */}
+    <div className="max-w-4xl mx-auto space-y-8 animate-fade-in">
+
+      {/* Header */}
       <div className="space-y-2">
-        <h1 className="text-3xl md:text-5xl font-black tracking-tight">
-          Partner <span className="text-teal">Referrals</span>
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight">
+          Partner <span style={{ color: '#38BDF8' }}>Referrals</span>
         </h1>
-        <p className="text-gray-400 text-xs md:text-sm">Invite colleagues, friends, or family members and claim direct Stellar Soroban smart contract HPH bonuses.</p>
+        <p className="text-sm md:text-base" style={{ color: '#64748B' }}>
+          Invite friends and claim HPH tokens automatically via Stellar Soroban smart contracts.
+        </p>
       </div>
 
-      {/* 2. Promo / Link Generator Grid */}
-      <div className="grid md:grid-cols-3 gap-6">
-        {/* Referral Program Info */}
-        <div className="glass-card rounded-2xl p-6 border border-border flex flex-col justify-between space-y-4">
-          <div className="space-y-1.5">
-            <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest block">Bonus Rate</span>
-            <div className="flex items-center space-x-2">
-              <Gift className="w-8 h-8 text-teal" />
+      {/* Referral Cards */}
+      <div className="grid md:grid-cols-3 gap-5">
+        {/* Bonus Rate Card */}
+        <div
+          className="glass-card rounded-3xl p-6 flex flex-col justify-between space-y-5"
+          style={{ border: '1px solid rgba(20,184,166,0.15)' }}
+        >
+          <div className="space-y-3">
+            <span className="text-[10px] font-black uppercase tracking-widest block" style={{ color: '#475569' }}>Bonus Rate</span>
+            <div className="flex items-center gap-3">
+              <div
+                className="p-2.5 rounded-2xl"
+                style={{ background: 'rgba(20,184,166,0.1)', border: '1px solid rgba(20,184,166,0.2)' }}
+              >
+                <Gift className="w-7 h-7" style={{ color: '#2DD4BF' }} />
+              </div>
               <div>
                 <span className="text-3xl font-black text-white">25 HPH</span>
-                <span className="text-xs text-gray-400 block font-bold">Per Referral</span>
+                <span className="block text-xs font-bold mt-0.5" style={{ color: '#64748B' }}>Per Referral</span>
               </div>
             </div>
-            <p className="text-[10.5px] text-gray-400 leading-normal pt-1.5">
-              When someone registers using your exclusive partner link and connects their Freighter wallet, our Stellar Soroban smart contract automatically triggers a direct transfer of 25 HPH to your account.
+            <p className="text-xs leading-relaxed" style={{ color: '#64748B' }}>
+              When someone registers via your link and connects their Freighter wallet, our Stellar
+              Soroban contract automatically transfers 25 HPH to your account.
             </p>
           </div>
-
-          <div className="bg-slate-900 border border-border p-3 rounded-xl text-[10px] text-teal font-extrabold text-center uppercase tracking-wide">
+          <div
+            className="p-3 rounded-2xl text-xs font-extrabold text-center"
+            style={{ background: 'rgba(20,184,166,0.08)', border: '1px solid rgba(20,184,166,0.2)', color: '#2DD4BF' }}
+          >
             🏆 Stellar Soroban Smart Contract Secured
           </div>
         </div>
 
         {/* Link Generator */}
-        <div className="md:col-span-2 glass-card rounded-2xl p-6 border border-border space-y-5 flex flex-col justify-between">
-          <div className="space-y-3">
+        <div
+          className="md:col-span-2 glass-card rounded-3xl p-6 flex flex-col justify-between space-y-5"
+          style={{ border: '1px solid rgba(30,42,69,0.7)' }}
+        >
+          <div className="space-y-4">
             <div className="flex justify-between items-center">
-              <span className="text-[10px] text-gray-500 font-bold uppercase tracking-widest">Your Partner Gateway Link</span>
-              <span className="text-[9px] text-teal font-bold bg-teal/10 px-2 py-0.5 rounded border border-teal/10 uppercase">active</span>
+              <span className="text-[10px] font-black uppercase tracking-widest" style={{ color: '#475569' }}>Your Partner Gateway Link</span>
+              <span
+                className="text-[9px] font-bold px-2.5 py-1 rounded-xl uppercase"
+                style={{ background: 'rgba(20,184,166,0.1)', border: '1px solid rgba(20,184,166,0.2)', color: '#2DD4BF' }}
+              >
+                Active
+              </span>
             </div>
 
-            <div className="flex items-center gap-2 bg-slate-900 border border-border p-2.5 rounded-xl">
+            {/* Referral Link Input */}
+            <div
+              className="flex items-center gap-2 p-3 rounded-2xl"
+              style={{ background: 'rgba(10,15,30,0.5)', border: '1px solid rgba(30,42,69,0.6)' }}
+            >
               <input
                 type="text"
                 readOnly
                 value={referralLink}
-                className="bg-transparent border-none text-xs text-gray-300 font-mono focus:outline-none flex-grow"
+                id="referral-link-input"
+                className="bg-transparent border-none text-xs font-mono focus:outline-none flex-grow min-w-0"
+                style={{ color: '#94A3B8' }}
               />
               <button
                 onClick={handleCopyLink}
-                className={`p-2 rounded-lg transition-all active:scale-95 flex items-center justify-center ${
-                  copied 
-                    ? "bg-teal text-slate-950" 
-                    : "bg-slate-800 text-gray-400 hover:text-white"
-                }`}
+                id="copy-referral-btn"
+                className="p-2.5 rounded-xl flex items-center justify-center flex-shrink-0 transition-all active:scale-95"
+                style={{
+                  background: copied ? 'rgba(20,184,166,0.2)' : 'rgba(37,99,235,0.15)',
+                  border: copied ? '1px solid rgba(20,184,166,0.4)' : '1px solid rgba(37,99,235,0.3)',
+                  color: copied ? '#2DD4BF' : '#60A5FA',
+                }}
               >
                 {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
               </button>
             </div>
-            <p className="text-[10px] text-gray-500 italic">Share this link directly on Twitter, Discord, WhatsApp or Telegram to scale your network payout.</p>
+            {copied && (
+              <p className="text-xs font-semibold" style={{ color: '#2DD4BF' }}>✓ Copied to clipboard!</p>
+            )}
+            <p className="text-xs italic" style={{ color: '#475569' }}>
+              Share on Twitter, Discord, WhatsApp, or Telegram to grow your network.
+            </p>
           </div>
 
-          <div className="flex items-center justify-between text-xs text-gray-400 pt-4 border-t border-border">
-            <div className="flex items-center space-x-1">
-              <Users className="w-4 h-4 text-teal" />
-              <span>Total referrals: <strong className="text-white font-extrabold">12 members</strong></span>
+          <div
+            className="flex items-center justify-between text-xs pt-4"
+            style={{ borderTop: '1px solid rgba(30,42,69,0.5)' }}
+          >
+            <div className="flex items-center gap-2">
+              <Users className="w-4 h-4" style={{ color: '#2DD4BF' }} />
+              <span style={{ color: '#64748B' }}>Total referrals: <strong className="text-white">12 members</strong></span>
             </div>
-            <span className="text-teal font-bold">Earned 300 HPH total</span>
+            <span className="font-bold" style={{ color: '#2DD4BF' }}>Earned 300 HPH</span>
           </div>
         </div>
       </div>
 
-      {/* 3. Leaderboard List */}
-      <div className="glass-card rounded-2xl border border-border overflow-hidden">
-        <div className="border-b border-border bg-slate-900/40 p-5 flex items-center justify-between">
-          <div className="flex items-center space-x-2.5">
-            <Crown className="w-5 h-5 text-gold" />
+      {/* Leaderboard */}
+      <div
+        className="glass-card rounded-3xl overflow-hidden"
+        style={{ border: '1px solid rgba(30,42,69,0.7)' }}
+      >
+        <div
+          className="p-5 flex items-center justify-between"
+          style={{ borderBottom: '1px solid rgba(30,42,69,0.6)', background: 'rgba(10,15,30,0.3)' }}
+        >
+          <div className="flex items-center gap-2.5">
+            <div
+              className="p-2 rounded-xl"
+              style={{ background: 'rgba(245,158,11,0.1)', border: '1px solid rgba(245,158,11,0.2)' }}
+            >
+              <Trophy className="w-4 h-4" style={{ color: '#FCD34D' }} />
+            </div>
             <h3 className="text-base font-bold text-white">Top Referrer Leaderboard</h3>
           </div>
-          <span className="text-[10px] text-gray-500 font-bold uppercase tracking-wider">Updates Live</span>
+          <div className="flex items-center gap-1.5 text-[10px] font-bold" style={{ color: '#475569' }}>
+            <Zap className="w-3.5 h-3.5" style={{ color: '#2DD4BF' }} />
+            Updates Live
+          </div>
         </div>
 
-        <div className="divide-y divide-border/60">
+        <div className="divide-y" style={{ borderColor: 'rgba(30,42,69,0.4)' }}>
           {leaderboard.map((user) => (
-            <div key={user.rank} className="flex justify-between items-center p-4 hover:bg-slate-900/30 transition-colors">
-              <div className="flex items-center space-x-4">
-                <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-black ${
-                  user.rank === 1 ? "bg-gold text-slate-950" : 
-                  user.rank === 2 ? "bg-slate-300 text-slate-900" :
-                  user.rank === 3 ? "bg-amber-600 text-white" :
-                  "bg-slate-850 text-gray-400 border border-border"
-                }`}>
+            <div
+              key={user.rank}
+              className="flex justify-between items-center p-4 transition-colors hover:bg-opacity-50"
+              style={{
+                background: user.rank === 1 ? 'rgba(245,158,11,0.03)' : 'transparent',
+              }}
+              onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.background = 'rgba(37,99,235,0.04)'; }}
+              onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.background = user.rank === 1 ? 'rgba(245,158,11,0.03)' : 'transparent'; }}
+            >
+              <div className="flex items-center gap-4">
+                <span
+                  className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-extrabold flex-shrink-0"
+                  style={rankStyle(user.rank)}
+                >
                   {user.rank}
                 </span>
                 <div>
-                  <span className="text-xs font-bold text-white block">{user.name}</span>
-                  <span className="text-[10px] text-gray-500">{user.referrals} successful signups</span>
+                  <span className="text-sm font-bold text-white block">{user.name}</span>
+                  <span className="text-xs" style={{ color: '#475569' }}>{user.referrals} successful signups</span>
                 </div>
               </div>
-
               <div className="text-right">
-                <span className="text-xs font-black text-teal block">+{user.reward} HPH</span>
-                <span className="text-[9px] text-gray-500 uppercase font-black">CLAIMED</span>
+                <span className="text-sm font-extrabold block" style={{ color: '#2DD4BF' }}>+{user.reward} HPH</span>
+                <span className="text-[9px] font-bold uppercase" style={{ color: '#475569' }}>Claimed</span>
               </div>
             </div>
           ))}
