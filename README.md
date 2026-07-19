@@ -15,7 +15,7 @@
 
 | **Secured Checkout & Minting** |
 |:---:|
-![Secured Checkout](https://github.com/Durvesh452/sem-4/blob/6dc965919e05fc5f688592e4257ba0682debab82/Screenshot%202026-06-24%20131438.png) |
+![Secured Checkout](https://github.com/Durvesh452/sem-4/blob/5db9d5133badaa25b586db6c4c90628fd9bcbd36/Screenshot%202026-07-19%20203647.png) |
 
 | **Analytics & Spend Dashboard** |
 |:---:|
