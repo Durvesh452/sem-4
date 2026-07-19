@@ -19,7 +19,7 @@
 
 | **Analytics & Spend Dashboard** |
 |:---:|
-| ![Spend Dashboard](https://github.com/Durvesh452/sem-4/blob/fba194901f8894c0559ccaafc7e02e222e577891/Screenshot%202026-06-24%20131611.png) |
+| ![Spend Dashboard](https://github.com/Durvesh452/sem-4/blob/5a184aa0f83c725481e4a2b90725a9a8669ac11f/Screenshot%202026-07-19%20203801.png) |
 
 ---
 
