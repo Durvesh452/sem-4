@@ -11,7 +11,7 @@
 
 | **HPH Reward Wallet** |
 |:---:|
-| ![HPH Reward Wallet](https://github.com/Durvesh452/sem-4/blob/490c68b2ce113050a6c2de71a93d0d1f13024a6f/Screenshot%202026-06-24%20131209.png) | 
+| ![HPH Reward Wallet](https://github.com/Durvesh452/sem-4/blob/1e29ce42fa70bf658589bb88394273a3ed0a181f/Screenshot%202026-07-19%20203647.png) | 
 
 | **Secured Checkout & Minting** |
 |:---:|
