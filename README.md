@@ -1,7 +1,7 @@
 # Hidden Plans Hub (HPH)
 > **"The plans they don't advertise. The savings you deserve."**
 
-### 🌐 Live Application Link: [hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app](https://hidden-plans-b7y2udczn-durvesh452s-projects.vercel.app)
+### 🌐 Live Application Link: [ https://hidden-plans-hub-five.vercel.app]( https://hidden-plans-hub-five.vercel.app)
 ### 📊 Pitch Deck / Presentation: [Google Slides](https://docs.google.com/presentation/d/1tkA807u_aZB6mRd75dLv35MNYbfaxGGqWsI3kXOMO8s/edit?usp=sharing)
 ### 🎥 Demo Walkthrough Video: [Watch on Loom](https://www.loom.com/share/209937b18bea41a5aca78e6499d349d2)
 
